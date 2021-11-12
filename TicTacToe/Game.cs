@@ -6,19 +6,26 @@
 
     public sealed class Game
     {
-        private Char _lastTurn = 'O';
+        private Turn _lastTurn;
         public IEnumerable<Char> Board { get; set; } = new List<Char>();
 
         public void PlayX ()
         {
-            if (this._lastTurn == 'X') throw new InvalidTurn();
-            this._lastTurn = 'X';
+            if (this._lastTurn == Turn.PlayerX) throw new InvalidTurn();
+            this._lastTurn = Turn.PlayerX;
         }
 
         public void PlayO ()
         {
-            if (this._lastTurn == 'O') throw new InvalidTurn();
-            this._lastTurn = 'O';
+            if (this._lastTurn == Turn.PlayerO) throw new InvalidTurn();
+            this._lastTurn = Turn.PlayerO;
+        }
+
+
+        private enum Turn
+        {
+            PlayerO,
+            PlayerX,
         }
     }
 }
