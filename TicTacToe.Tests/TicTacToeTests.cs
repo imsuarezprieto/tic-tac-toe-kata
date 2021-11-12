@@ -92,4 +92,22 @@ namespace Exeal.Katas.TicTacToe.Tests
             playersMarksInTurns.Should().NotThrow();
         }
     }
+
+
+    [Collection( "Rule 3" )]
+    public sealed class Players_cannot_mark_already_marked_position
+    {
+        [Fact]
+        public void Player_cannot_mark_previous_marked_position ()
+        {
+            var newGame = new Game();
+
+            Action playerOMarksSamePlayerX = () => {
+                newGame.PlayX( row: 1, column: 1 );
+                newGame.PlayO( row: 1, column: 1 );
+            };
+
+            playerOMarksSamePlayerX.Should().Throw<InvalidMarkedPosition>();
+        }
+    }
 }
