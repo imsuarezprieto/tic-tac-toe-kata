@@ -17,7 +17,8 @@
 
         public void PlayO ()
         {
-            throw new InvalidTurn();
+            if (this.lastTurn == 'O') throw new InvalidTurn();
+            this.lastTurn = 'O';
         }
     }
 }

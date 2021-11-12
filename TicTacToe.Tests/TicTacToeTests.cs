@@ -77,5 +77,19 @@ namespace Exeal.Katas.TicTacToe.Tests
 
             playerXMarksTwoConsecutiveTurns.Should().Throw<InvalidTurn>();
         }
+
+        [Fact]
+        public void Players_can_mark_in_turns ()
+        {
+            var newGame = new Game();
+
+            Action playersMarksInTurns = () => {
+                newGame.PlayX();
+                newGame.PlayO();
+                newGame.PlayX();
+            };
+
+            playersMarksInTurns.Should().NotThrow();
+        }
     }
 }
