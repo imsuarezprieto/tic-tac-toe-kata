@@ -8,5 +8,12 @@
     {
         public IEnumerable<Char> Board { get; set; } =
             new List<Char>();
+
+        public void PlayX () { }
+
+        public void PlayO ()
+        {
+            throw new InvalidTurn();
+        }
     }
 }
