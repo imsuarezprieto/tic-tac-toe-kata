@@ -109,5 +109,18 @@ namespace Exeal.Katas.TicTacToe.Tests
 
             playerOMarksSamePlayerX.Should().Throw<InvalidMarkedPosition>();
         }
+
+        [Fact]
+        public void PlayerO_can_mark_different_position_from_previous_playerX_marked_position ()
+        {
+            var newGame = new Game();
+
+            Action playerOMarksSamePlayerX = () => {
+                newGame.PlayX( row: 1, column: 1 );
+                newGame.PlayO( row: 1, column: 2 );
+            };
+
+            playerOMarksSamePlayerX.Should().NotThrow();
+        }
     }
 }

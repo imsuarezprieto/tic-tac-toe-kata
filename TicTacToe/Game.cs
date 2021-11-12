@@ -37,7 +37,7 @@
                 Int32 column )
         {
             Contract<InvalidMarkedPosition>
-                    .Requires( this._previousMarkedRow != row && this._previousMarkColumn != column );
+                    .Requires( this._previousMarkedRow != row || this._previousMarkColumn != column );
             this.PlayO();
         }
 
