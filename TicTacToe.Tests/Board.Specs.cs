@@ -16,11 +16,8 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            var startBoard = newGame.Board;
-
-            startBoard
-                    .Should().OnlyContain( static position =>
-                            position.Value == false );
+            newGame.HasEmptyBoard()
+                    .Should().BeTrue();
         }
     }
 
