@@ -9,7 +9,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 
 
     [Collection( "Rule 0" )]
-    public sealed class Starts_Empty_Board
+    public sealed class Starts_empty_Board
     {
         [Fact]
         public void Game_starts_with_an_empty_board ()
@@ -24,7 +24,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 
 
     [Collection( "Rule 1" )]
-    public sealed class PlayerX_Starts_Game
+    public sealed class PlayerX_starts_game
     {
         [Fact]
         public void PlayerX_can_start_the_game ()
