@@ -15,13 +15,15 @@
 
         public void PlayX ()
         {
-            Contract<InvalidTurn>.Requires( this._lastTurn != Turn.PlayerX );
+            Contract<InvalidTurn>
+                    .Requires( this._lastTurn != Turn.PlayerX );
             this._lastTurn = Turn.PlayerX;
         }
 
         public void PlayO ()
         {
-            Contract<InvalidTurn>.Requires( this._lastTurn != Turn.PlayerO );
+            Contract<InvalidTurn>
+                    .Requires( this._lastTurn != Turn.PlayerO );
             this._lastTurn = Turn.PlayerO;
         }
 
