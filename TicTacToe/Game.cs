@@ -26,7 +26,7 @@
                 Int32 row,
                 Int32 column )
         {
-            this._board.MarkPosition( row, column );
+            this._board.MarkPosition( ((Row) row, (Column) column) );
             this.PlayX();
         }
 
@@ -34,7 +34,7 @@
                 Int32 row,
                 Int32 column )
         {
-            this._board.MarkPosition( row, column );
+            this._board.MarkPosition( ((Row) row, (Column) column) );
             this.PlayO();
         }
 

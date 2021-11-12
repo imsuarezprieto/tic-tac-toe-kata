@@ -20,14 +20,13 @@
         };
 
         internal void MarkPosition (
-                Int32 row,
-                Int32 column )
+                (Row, Column) position )
         {
             Contract<OffBoardPosition>
-                    .Requires( this._positions.ContainsKey( ((Row) row, (Column) column) ) );
+                    .Requires( this._positions.ContainsKey( position ) );
             Contract<AlreadyMarkedPosition>
-                    .Requires( this._positions[((Row) row, (Column) column)] == false );
-            this._positions[((Row) row, (Column) column)] = true;
+                    .Requires( this._positions[position] == false );
+            this._positions[position] = true;
         }
 
         internal Boolean IsEmpty ()
