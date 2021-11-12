@@ -7,9 +7,17 @@
     public sealed class Game
     {
         private Turn _lastTurn;
-        private Int32? _previousMarkColumn;
-        private Int32? _previousMarkedRow;
-        public IEnumerable<Char> Board { get; set; } = new List<Char>();
+        public Dictionary<(Int32 row, Int32 column), Boolean> Board { get; set; } = new() {
+                { (0, 0), default },
+                { (0, 1), default },
+                { (0, 2), default },
+                { (1, 0), default },
+                { (1, 1), default },
+                { (1, 2), default },
+                { (2, 0), default },
+                { (2, 1), default },
+                { (2, 2), default },
+        };
 
         public void PlayX ()
         {
@@ -28,9 +36,8 @@
                 Int32 column )
         {
             Contract<InvalidMarkedPosition>
-                    .Requires( this._previousMarkedRow != row || this._previousMarkColumn != column );
-            this._previousMarkedRow = row;
-            this._previousMarkColumn = column;
+                    .Requires( this.Board[(row, column)] == false );
+            this.Board[(row, column)] = true;
             this.PlayX();
         }
 
@@ -39,7 +46,8 @@
                 Int32 column )
         {
             Contract<InvalidMarkedPosition>
-                    .Requires( this._previousMarkedRow != row || this._previousMarkColumn != column );
+                    .Requires( this.Board[(row, column)] == false );
+            this.Board[(row, column)] = true;
             this.PlayO();
         }
 
