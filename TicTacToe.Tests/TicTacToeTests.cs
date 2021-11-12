@@ -41,9 +41,9 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerXStarts = () => newGame.PlayO();
+            Action playerOStarts = () => newGame.PlayO();
 
-            playerXStarts.Should().Throw<InvalidTurn>();
+            playerOStarts.Should().Throw<InvalidTurn>();
         }
     }
 
