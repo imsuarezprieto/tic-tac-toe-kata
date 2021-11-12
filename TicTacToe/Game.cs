@@ -11,13 +11,13 @@
 
         public void PlayX ()
         {
-            if (this._lastTurn == Turn.PlayerX) throw new InvalidTurn();
+            Contract<InvalidTurn>.Requires( this._lastTurn != Turn.PlayerX );
             this._lastTurn = Turn.PlayerX;
         }
 
         public void PlayO ()
         {
-            if (this._lastTurn == Turn.PlayerO) throw new InvalidTurn();
+            Contract<InvalidTurn>.Requires( this._lastTurn != Turn.PlayerO );
             this._lastTurn = Turn.PlayerO;
         }
 
