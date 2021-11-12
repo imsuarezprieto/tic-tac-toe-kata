@@ -27,6 +27,8 @@
                 Int32 row,
                 Int32 column )
         {
+            Contract<InvalidMarkedPosition>
+                    .Requires( this._previousMarkedRow != row || this._previousMarkColumn != column );
             this._previousMarkedRow = row;
             this._previousMarkColumn = column;
             this.PlayX();

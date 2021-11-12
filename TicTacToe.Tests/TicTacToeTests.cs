@@ -122,5 +122,19 @@ namespace Exeal.Katas.TicTacToe.Tests
 
             playerOMarksSamePlayerX.Should().NotThrow();
         }
+
+        [Fact]
+        public void PlayerX_cannot_mark_same_position_twice ()
+        {
+            var newGame = new Game();
+
+            Action playerXMarksSamePositionTwice = () => {
+                newGame.PlayX( row: 1, column: 1 );
+                newGame.PlayO( row: 1, column: 2 );
+                newGame.PlayX( row: 1, column: 1 );
+            };
+
+            playerXMarksSamePositionTwice.Should().Throw<InvalidMarkedPosition>();
+        }
     }
 }
