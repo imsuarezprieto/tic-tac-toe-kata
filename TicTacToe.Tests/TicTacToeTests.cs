@@ -1,4 +1,5 @@
 // ReSharper disable SuggestVarOrType_Elsewhere
+// ReSharper disable InconsistentNaming
 
 namespace Exeal.Katas.TicTacToe.Tests
 {
@@ -7,10 +8,9 @@ namespace Exeal.Katas.TicTacToe.Tests
     using Xunit;
 
 
-    public sealed class UnitTest1
+    [Collection( "Rule 0" )]
+    public sealed class Starts_Empty_Board
     {
-        // RULE 0
-
         [Fact]
         public void Game_starts_with_an_empty_board ()
         {
@@ -20,9 +20,12 @@ namespace Exeal.Katas.TicTacToe.Tests
 
             startBoard.Should().BeEmpty();
         }
+    }
 
-        // RULE 1
 
+    [Collection( "Rule 1" )]
+    public sealed class PlayerX_Starts_Game
+    {
         [Fact]
         public void PlayerX_can_start_the_game ()
         {
