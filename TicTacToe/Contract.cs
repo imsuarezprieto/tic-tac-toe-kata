@@ -3,7 +3,7 @@
     using System;
 
 
-    public static class Contract<TException> where TException : Exception, new()
+    internal static class Contract<TException> where TException : Exception, new()
     {
         public static void Requires (
                 Boolean condition
