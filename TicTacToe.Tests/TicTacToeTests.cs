@@ -98,7 +98,7 @@ namespace Exeal.Katas.TicTacToe.Tests
     public sealed class Players_cannot_mark_already_marked_position
     {
         [Fact]
-        public void Player_cannot_mark_previous_marked_position ()
+        public void PlayerO_cannot_mark_previous_playerX_marked_position ()
         {
             var newGame = new Game();
 
