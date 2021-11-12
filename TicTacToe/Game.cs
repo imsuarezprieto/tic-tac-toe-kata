@@ -6,8 +6,7 @@
 
     public sealed class Game
     {
-        public IEnumerable<Char> Board { get; set; } =
-            new List<Char>();
+        public IEnumerable<Char> Board { get; set; } = new List<Char>();
 
         public void PlayX () { }
 
