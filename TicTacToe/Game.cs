@@ -31,6 +31,8 @@
                 Int32 row,
                 Int32 column )
         {
+            Contract<OffBoardPosition>
+                    .Requires( this.Board.ContainsKey( (row, column) ) );
             Contract<AlreadyMarkedPosition>
                     .Requires( this.Board[(row, column)] == false );
             this.Board[(row, column)] = true;
@@ -41,6 +43,8 @@
                 Int32 row,
                 Int32 column )
         {
+            Contract<OffBoardPosition>
+                    .Requires( this.Board.ContainsKey( (row, column) ) );
             Contract<AlreadyMarkedPosition>
                     .Requires( this.Board[(row, column)] == false );
             this.Board[(row, column)] = true;
