@@ -1,0 +1,1 @@
+﻿namespace Exeal.Katas.TicTacToe { }
