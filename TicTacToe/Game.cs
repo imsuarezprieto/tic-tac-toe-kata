@@ -1,10 +1,12 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
-    using System.Collections;
+    using System;
+    using System.Collections.Generic;
 
 
     public sealed class Game
     {
-        public IEnumerable Board { get; set; } = new ArrayList();
+        public IEnumerable<Char> Board { get; set; } =
+            new List<Char>();
     }
 }

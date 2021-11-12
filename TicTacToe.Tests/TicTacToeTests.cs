@@ -1,17 +1,14 @@
 namespace Exeal.Katas.TicTacToe.Tests
 {
-    using System.Collections;
+    using FluentAssertions;
     using Xunit;
 
 
     public sealed class UnitTest1
     {
         [Fact]
-        public void Game_starts_with_an_empty_board ()
-        {
-            IEnumerable newGameBoard = new Game().Board;
-
-            Assert.Empty( newGameBoard );
-        }
+        public void Game_starts_with_an_empty_board () =>
+                new Game().Board
+                        .Should().BeEmpty();
     }
 }
