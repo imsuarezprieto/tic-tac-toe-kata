@@ -29,7 +29,7 @@
                 Int32 row,
                 Int32 column )
         {
-            Contract<InvalidMarkedPosition>
+            Contract<AlreadyMarkedPosition>
                     .Requires( this.Board[(row, column)] == false );
             this.Board[(row, column)] = true;
             this.PlayX();
@@ -39,7 +39,7 @@
                 Int32 row,
                 Int32 column )
         {
-            Contract<InvalidMarkedPosition>
+            Contract<AlreadyMarkedPosition>
                     .Requires( this.Board[(row, column)] == false );
             this.Board[(row, column)] = true;
             this.PlayO();

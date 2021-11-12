@@ -115,7 +115,7 @@ namespace Exeal.Katas.TicTacToe.Tests
             };
 
             playerO_marks_same_playerX
-                    .Should().Throw<InvalidMarkedPosition>();
+                    .Should().Throw<AlreadyMarkedPosition>();
         }
 
         [Fact]
@@ -144,7 +144,7 @@ namespace Exeal.Katas.TicTacToe.Tests
             };
 
             playerX_marks_same_position_twice
-                    .Should().Throw<InvalidMarkedPosition>();
+                    .Should().Throw<AlreadyMarkedPosition>();
         }
 
         [Fact]
@@ -160,7 +160,7 @@ namespace Exeal.Katas.TicTacToe.Tests
             };
 
             playerO_marks_same_position_twice
-                    .Should().Throw<InvalidMarkedPosition>();
+                    .Should().Throw<AlreadyMarkedPosition>();
         }
     }
 }
