@@ -31,9 +31,9 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerXStarts = () => newGame.PlayX();
+            Action playerX_starts = () => newGame.PlayX();
 
-            playerXStarts.Should().NotThrow();
+            playerX_starts.Should().NotThrow();
         }
 
         [Fact]
@@ -41,9 +41,9 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerOStarts = () => newGame.PlayO();
+            Action playerO_starts = () => newGame.PlayO();
 
-            playerOStarts.Should().Throw<InvalidTurn>();
+            playerO_starts.Should().Throw<InvalidTurn>();
         }
     }
 
@@ -56,12 +56,12 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerXMarksTwoConsecutiveTurns = () => {
+            Action playerX_marks_two_consecutive_turns = () => {
                 newGame.PlayX();
                 newGame.PlayX();
             };
 
-            playerXMarksTwoConsecutiveTurns.Should().Throw<InvalidTurn>();
+            playerX_marks_two_consecutive_turns.Should().Throw<InvalidTurn>();
         }
 
         [Fact]
@@ -69,13 +69,13 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerXMarksTwoConsecutiveTurns = () => {
+            Action playerX_marks_two_consecutive_turns = () => {
                 newGame.PlayX();
                 newGame.PlayO();
                 newGame.PlayO();
             };
 
-            playerXMarksTwoConsecutiveTurns.Should().Throw<InvalidTurn>();
+            playerX_marks_two_consecutive_turns.Should().Throw<InvalidTurn>();
         }
 
         [Fact]
@@ -83,13 +83,13 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playersMarksInTurns = () => {
+            Action players_marks_in_turns = () => {
                 newGame.PlayX();
                 newGame.PlayO();
                 newGame.PlayX();
             };
 
-            playersMarksInTurns.Should().NotThrow();
+            players_marks_in_turns.Should().NotThrow();
         }
     }
 
@@ -102,12 +102,12 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerOMarksSamePlayerX = () => {
+            Action playerO_marks_same_playerX = () => {
                 newGame.PlayX( row: 1, column: 1 );
                 newGame.PlayO( row: 1, column: 1 );
             };
 
-            playerOMarksSamePlayerX.Should().Throw<InvalidMarkedPosition>();
+            playerO_marks_same_playerX.Should().Throw<InvalidMarkedPosition>();
         }
 
         [Fact]
@@ -115,12 +115,12 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerOMarksSamePlayerX = () => {
+            Action playerO_marks_same_playerX = () => {
                 newGame.PlayX( row: 1, column: 1 );
                 newGame.PlayO( row: 1, column: 2 );
             };
 
-            playerOMarksSamePlayerX.Should().NotThrow();
+            playerO_marks_same_playerX.Should().NotThrow();
         }
 
         [Fact]
@@ -128,13 +128,13 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerXMarksSamePositionTwice = () => {
+            Action playerX_marks_same_position_twice = () => {
                 newGame.PlayX( row: 1, column: 1 );
                 newGame.PlayO( row: 1, column: 2 );
                 newGame.PlayX( row: 1, column: 1 );
             };
 
-            playerXMarksSamePositionTwice.Should().Throw<InvalidMarkedPosition>();
+            playerX_marks_same_position_twice.Should().Throw<InvalidMarkedPosition>();
         }
     }
 }
