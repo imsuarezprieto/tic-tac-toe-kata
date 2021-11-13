@@ -7,27 +7,26 @@
 
     internal sealed class Board
     {
-        private readonly Dictionary<Position, Boolean> _positions = new() {
-                { new Position( Row: Row.Top,    Column: Column.Left ),     default },
-                { new Position( Row: Row.Top,    Column: Column.Middle ),   default },
-                { new Position( Row: Row.Top,    Column: Column.Right ),    default },
-                { new Position( Row: Row.Middle, Column: Column.Left ),     default },
-                { new Position( Row: Row.Middle, Column: Column.Middle ),   default },
-                { new Position( Row: Row.Middle, Column: Column.Right ),    default },
-                { new Position( Row: Row.Bottom, Column: Column.Left ),     default },
-                { new Position( Row: Row.Bottom, Column: Column.Middle ),   default },
-                { new Position( Row: Row.Bottom, Column: Column.Right ),    default },
+        private readonly Dictionary<IPosition, Boolean> _positions = new() {
+                { Position.Top.Left,      default },
+                { Position.Top.Middle,    default },
+                { Position.Top.Right,     default },
+                { Position.Middle.Left,   default },
+                { Position.Center,        default },
+                { Position.Middle.Right,  default },
+                { Position.Bottom.Left,   default },
+                { Position.Bottom.Middle, default },
+                { Position.Bottom.Right,  default },
         };
 
         internal void MarkPosition (
-                Int32 row,
-                Int32 column )
+                IPosition position )
         {
             Contract<OffBoardPosition>
-                    .Requires( this._positions.ContainsKey( new Position( Row: (Row) row, Column: (Column) column ) ) );
+                    .Requires( this._positions.ContainsKey( position ) );
             Contract<AlreadyMarkedPosition>
-                    .Requires( this._positions[new Position( Row: (Row) row, Column: (Column) column )] == false );
-            this._positions[new Position( Row: (Row) row, Column: (Column) column )] = true;
+                    .Requires( this._positions[position] == false );
+            this._positions[position] = true;
         }
 
         internal Boolean IsEmpty ()

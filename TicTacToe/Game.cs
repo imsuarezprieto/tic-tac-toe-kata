@@ -23,18 +23,16 @@
         }
 
         public void PlayX (
-                Int32 row,
-                Int32 column )
+                IPosition position )
         {
-            this._board.MarkPosition( row: row, column: column );
+            this._board.MarkPosition( position );
             this.PlayX();
         }
 
         public void PlayO (
-                Int32 row,
-                Int32 column )
+                IPosition position )
         {
-            this._board.MarkPosition( row: row, column: column );
+            this._board.MarkPosition( position );
             this.PlayO();
         }
 
