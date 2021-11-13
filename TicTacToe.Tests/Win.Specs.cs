@@ -18,15 +18,15 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// X O O
 			// · X ·
 			// · · X
-			game.PlayX( Position.Center );
-			game.PlayO( Position.Top.Right );
-			game.PlayX( Position.Bottom.Right );
-			game.PlayO( Position.Top.Middle );
-			game.PlayX( Position.Top.Left );
+			game
+					.Play( Position.Center )
+					.Play( Position.Top.Right )
+					.Play( Position.Bottom.Right )
+					.Play( Position.Top.Middle )
+					.Play( Position.Top.Left );
 
-			var winner = game.Winner();
-
-			winner.Should().Be( Game.Player.PlayerX );
+			game.Winner()
+					.Should().Be( Game.Player.PlayerX );
 		}
 
 		[Fact]
@@ -37,16 +37,16 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// O O O
 			// · X ·
 			// X · X
-			game.PlayX( Position.Center );
-			game.PlayO( Position.Top.Right );
-			game.PlayX( Position.Bottom.Right );
-			game.PlayO( Position.Top.Middle );
-			game.PlayX( Position.Bottom.Left );
-			game.PlayO( Position.Top.Left );
+			game
+					.Play( Position.Center )
+					.Play( Position.Top.Right )
+					.Play( Position.Bottom.Right )
+					.Play( Position.Top.Middle )
+					.Play( Position.Bottom.Left )
+					.Play( Position.Top.Left );
 
-			var winner = game.Winner();
-
-			winner.Should().Be( Game.Player.PlayerO );
+			game.Winner()
+					.Should().Be( Game.Player.PlayerO );
 		}
 
 		[Fact]
@@ -57,19 +57,19 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// O X O
 			// X X O
 			// X O X
-			game.PlayX( Position.Center );
-			game.PlayO( Position.Top.Right );
-			game.PlayX( Position.Bottom.Right );
-			game.PlayO( Position.Top.Left );
-			game.PlayX( Position.Bottom.Left );
-			game.PlayO( Position.Bottom.Middle );
-			game.PlayX( Position.Middle.Left );
-			game.PlayO( Position.Middle.Right );
-			game.PlayX( Position.Top.Middle );
+			game
+					.Play( Position.Center )
+					.Play( Position.Top.Right )
+					.Play( Position.Bottom.Right )
+					.Play( Position.Top.Left )
+					.Play( Position.Bottom.Left )
+					.Play( Position.Bottom.Middle )
+					.Play( Position.Middle.Left )
+					.Play( Position.Middle.Right )
+					.Play( Position.Top.Middle );
 
-			var winner = game.Winner();
-
-			winner.Should().BeNull();
+			game.Winner()
+					.Should().BeNull();
 		}
 	}
 }

@@ -14,12 +14,12 @@ namespace Exeal.Katas.TicTacToe.Tests
 		[Fact]
 		public void PlayerO_cannot_mark_previous_playerX_marked_position ()
 		{
-			var newGame = new Game();
+			var game = new Game();
 
-			Action playerO_marks_same_playerX = () => {
-				newGame.PlayX( Position.Center );
-				newGame.PlayO( Position.Center );
-			};
+			Action playerO_marks_same_playerX = ()
+					=> game
+							.Play( Position.Center )
+							.Play( Position.Center );
 
 			playerO_marks_same_playerX
 					.Should().Throw<AlreadyMarkedPosition>();
@@ -28,12 +28,11 @@ namespace Exeal.Katas.TicTacToe.Tests
 		[Fact]
 		public void PlayerO_can_mark_different_position_from_previous_playerX_marked_position ()
 		{
-			var newGame = new Game();
+			var game = new Game();
 
-			Action playerO_marks_same_playerX = () => {
-				newGame.PlayX( Position.Center );
-				newGame.PlayO( Position.Middle.Left );
-			};
+			Action playerO_marks_same_playerX = () => game
+					.Play( Position.Center )
+					.Play( Position.Middle.Left );
 
 			playerO_marks_same_playerX
 					.Should().NotThrow();
@@ -42,13 +41,12 @@ namespace Exeal.Katas.TicTacToe.Tests
 		[Fact]
 		public void PlayerX_cannot_mark_same_position_twice ()
 		{
-			var newGame = new Game();
+			var game = new Game();
 
-			Action playerX_marks_same_position_twice = () => {
-				newGame.PlayX( Position.Center );
-				newGame.PlayO( Position.Middle.Left );
-				newGame.PlayX( Position.Center );
-			};
+			Action playerX_marks_same_position_twice = () => game
+					.Play( Position.Center )
+					.Play( Position.Middle.Left )
+					.Play( Position.Center );
 
 			playerX_marks_same_position_twice
 					.Should().Throw<AlreadyMarkedPosition>();
@@ -57,14 +55,13 @@ namespace Exeal.Katas.TicTacToe.Tests
 		[Fact]
 		public void PlayerO_cannot_mark_same_position_twice ()
 		{
-			var newGame = new Game();
+			var game = new Game();
 
-			Action playerO_marks_same_position_twice = () => {
-				newGame.PlayX( Position.Center );
-				newGame.PlayO( Position.Middle.Right );
-				newGame.PlayX( Position.Bottom.Left );
-				newGame.PlayO( Position.Middle.Right );
-			};
+			Action playerO_marks_same_position_twice = () => game
+					.Play( Position.Center )
+					.Play( Position.Middle.Right )
+					.Play( Position.Bottom.Left )
+					.Play( Position.Middle.Right );
 
 			playerO_marks_same_position_twice
 					.Should().Throw<AlreadyMarkedPosition>();
