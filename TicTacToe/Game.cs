@@ -25,15 +25,15 @@
         public void PlayX (
                 IPosition position )
         {
-            this._board.MarkPosition( position );
             this.PlayX();
+            this._board.MarkPosition( position );
         }
 
         public void PlayO (
                 IPosition position )
         {
-            this._board.MarkPosition( position );
             this.PlayO();
+            this._board.MarkPosition( position );
         }
 
         public Boolean HasEmptyBoard () =>
