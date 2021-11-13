@@ -16,7 +16,8 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerX_starts = () => newGame.PlayX();
+            Action playerX_starts = () =>
+                    newGame.PlayX( Position.Center );
 
             playerX_starts
                     .Should().NotThrow();
@@ -27,7 +28,8 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerO_starts = () => newGame.PlayO();
+            Action playerO_starts = () =>
+                    newGame.PlayO( Position.Center );
 
             playerO_starts
                     .Should().Throw<InvalidTurn>();
