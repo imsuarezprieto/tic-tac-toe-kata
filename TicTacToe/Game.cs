@@ -22,7 +22,13 @@
                         _                                       => null,
                 };
 
-        public void PlayX (
+        public Game Play (
+                IPosition position ) =>
+                this._lastTurn == Turn.PlayerX
+                        ? this.PlayO( position )
+                        : this.PlayX( position );
+
+        public Game PlayX (
                 IPosition position )
         {
             Contract<InvalidTurn>
@@ -30,9 +36,10 @@
 
             this._lastTurn = Turn.PlayerX;
             this._board.MarkPosition( Mark.X, position );
+            return this;
         }
 
-        public void PlayO (
+        public Game PlayO (
                 IPosition position )
         {
             Contract<InvalidTurn>
@@ -40,6 +47,7 @@
 
             this._lastTurn = Turn.PlayerO;
             this._board.MarkPosition( Mark.O, position );
+            return this;
         }
 
         public Boolean HasEmptyBoard () =>
