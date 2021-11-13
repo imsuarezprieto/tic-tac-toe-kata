@@ -17,8 +17,8 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action playerX_marks_two_consecutive_turns = () => {
-                newGame.PlayX();
-                newGame.PlayX();
+                newGame.PlayX( Position.Center );
+                newGame.PlayX( Position.Center );
             };
 
             playerX_marks_two_consecutive_turns
@@ -31,9 +31,9 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action playerX_marks_two_consecutive_turns = () => {
-                newGame.PlayX();
-                newGame.PlayO();
-                newGame.PlayO();
+                newGame.PlayX( Position.Center );
+                newGame.PlayO( Position.Middle.Left );
+                newGame.PlayO( Position.Middle.Left );
             };
 
             playerX_marks_two_consecutive_turns
@@ -46,9 +46,9 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action players_marks_in_turns = () => {
-                newGame.PlayX();
-                newGame.PlayO();
-                newGame.PlayX();
+                newGame.PlayX( Position.Center );
+                newGame.PlayO( Position.Bottom.Right );
+                newGame.PlayX( Position.Top.Middle );
             };
 
             players_marks_in_turns
