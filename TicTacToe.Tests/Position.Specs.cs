@@ -17,8 +17,8 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action playerO_marks_same_playerX = () => {
-                newGame.PlayX( row: 1, column: 1 );
-                newGame.PlayO( row: 1, column: 1 );
+                newGame.PlayX( Position.Center );
+                newGame.PlayO( Position.Center );
             };
 
             playerO_marks_same_playerX
@@ -31,8 +31,8 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action playerO_marks_same_playerX = () => {
-                newGame.PlayX( row: 1, column: 1 );
-                newGame.PlayO( row: 1, column: 2 );
+                newGame.PlayX( Position.Center );
+                newGame.PlayO( Position.Middle.Left );
             };
 
             playerO_marks_same_playerX
@@ -45,9 +45,9 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action playerX_marks_same_position_twice = () => {
-                newGame.PlayX( row: 1, column: 1 );
-                newGame.PlayO( row: 1, column: 2 );
-                newGame.PlayX( row: 1, column: 1 );
+                newGame.PlayX( Position.Center );
+                newGame.PlayO( Position.Middle.Left );
+                newGame.PlayX( Position.Center );
             };
 
             playerX_marks_same_position_twice
@@ -60,10 +60,10 @@ namespace Exeal.Katas.TicTacToe.Tests
             var newGame = new Game();
 
             Action playerO_marks_same_position_twice = () => {
-                newGame.PlayX( row: 1, column: 1 );
-                newGame.PlayO( row: 1, column: 2 );
-                newGame.PlayX( row: 2, column: 1 );
-                newGame.PlayO( row: 1, column: 2 );
+                newGame.PlayX( Position.Center );
+                newGame.PlayO( Position.Middle.Right );
+                newGame.PlayX( Position.Bottom.Left );
+                newGame.PlayO( Position.Middle.Right );
             };
 
             playerO_marks_same_position_twice
