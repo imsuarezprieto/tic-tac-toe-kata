@@ -22,8 +22,6 @@
         internal void MarkPosition (
                 IPosition position )
         {
-            Contract<OffBoardPosition>
-                    .Requires( this._positions.ContainsKey( position ) );
             Contract<AlreadyMarkedPosition>
                     .Requires( this._positions[position] == false );
             this._positions[position] = true;
