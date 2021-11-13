@@ -30,13 +30,13 @@ namespace Exeal.Katas.TicTacToe.Tests
         {
             var newGame = new Game();
 
-            Action playerX_marks_two_consecutive_turns = () => {
+            Action playerO_marks_two_consecutive_turns = () => {
                 newGame.PlayX( Position.Center );
                 newGame.PlayO( Position.Middle.Left );
                 newGame.PlayO( Position.Middle.Left );
             };
 
-            playerX_marks_two_consecutive_turns
+            playerO_marks_two_consecutive_turns
                     .Should().Throw<InvalidTurn>();
         }
 
