@@ -1,6 +1,6 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
-	public enum Mark
+	internal enum Mark
 	{
 		None,
 		X,
