@@ -26,7 +26,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 					.Play( Position.Top.Left );
 
 			game.Winner()
-					.Should().Be( Game.Player.PlayerX );
+					.Should().Be( Player.PlayerX );
 		}
 
 		[Fact]
@@ -46,7 +46,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 					.Play( Position.Top.Left );
 
 			game.Winner()
-					.Should().Be( Game.Player.PlayerO );
+					.Should().Be( Player.PlayerO );
 		}
 
 		[Fact]

@@ -1,11 +1,8 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
-	public sealed partial class Game
+	public enum Player
 	{
-		public enum Player
-		{
-			PlayerO,
-			PlayerX,
-		}
+		PlayerO,
+		PlayerX,
 	}
 }
