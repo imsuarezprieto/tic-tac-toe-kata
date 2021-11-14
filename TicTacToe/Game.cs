@@ -1,14 +1,7 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
-	public sealed class Game
+	public sealed partial class Game
 	{
-		public enum Player
-		{
-			PlayerO,
-			PlayerX,
-		}
-
-
 		private readonly Board _board = new();
 		private          Turn  _lastTurn;
 
