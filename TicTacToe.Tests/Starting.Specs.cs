@@ -3,7 +3,6 @@
 
 namespace Exeal.Katas.TicTacToe.Tests
 {
-	using System;
 	using FluentAssertions;
 	using Xunit;
 
@@ -12,27 +11,25 @@ namespace Exeal.Katas.TicTacToe.Tests
 	public sealed class PlayerX_starts_game
 	{
 		[Fact]
-		public void PlayerX_can_start_the_game ()
+		public void PlayerX_starts_the_game ()
 		{
 			var newGame = new Game();
 
-			Action playerX_starts = () =>
-					newGame.PlayX( Position.Center );
+			newGame
+					.Play( Position.Center )
+					.Play( Position.Top.Middle )
+					.Play( Position.Top.Right )
+					.Play( Position.Bottom.Middle )
+					.Play( Position.Bottom.Left );
 
-			playerX_starts
-					.Should().NotThrow();
+			newGame.Winner()
+					.Should().Be( Player.X );
 		}
 
 		[Fact]
-		public void PlayerO_cannot_start_the_game ()
-		{
-			var newGame = new Game();
+		public void PlayerX_can_start_the_game () { }
 
-			Action playerO_starts = () =>
-					newGame.PlayO( Position.Center );
-
-			playerO_starts
-					.Should().Throw<InvalidTurn>();
-		}
+		[Fact]
+		public void PlayerO_cannot_start_the_game () { }
 	}
 }
