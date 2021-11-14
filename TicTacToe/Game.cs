@@ -1,8 +1,5 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
-	using System;
-
-
 	public sealed class Game
 	{
 		public enum Player
@@ -49,8 +46,6 @@
 			this._board.MarkPosition( Mark.O, position );
 			return this;
 		}
-
-		public Boolean HasEmptyBoard () => this._board.IsEmpty();
 
 
 		private enum Turn
