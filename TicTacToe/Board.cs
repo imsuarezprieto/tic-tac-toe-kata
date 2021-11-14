@@ -43,12 +43,4 @@
 							position.Value == Mark.None );
 		}
 	}
-
-
-	internal enum Mark
-	{
-		None,
-		X,
-		O,
-	}
 }
