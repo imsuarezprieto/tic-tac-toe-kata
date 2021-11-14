@@ -2,8 +2,8 @@
 {
 	public sealed class Game
 	{
-		private readonly Board  _board      = new();
-		private          Player _nextPlayer = Player.X;
+		private readonly Board  _board         = new();
+		private          Player _currentPlayer = Player.X;
 
 		public Player? Winner ()
 			=> this._board switch {
@@ -15,8 +15,8 @@
 		public Game Play (
 				IPosition position )
 		{
-			this._board.MarkPosition( this._nextPlayer.Mark, position );
-			this._nextPlayer = this._nextPlayer.NextPlayer;
+			this._board.MarkPosition( this._currentPlayer.Mark, position );
+			this._currentPlayer = this._currentPlayer.NextPlayer;
 			return this;
 		}
 
@@ -24,9 +24,9 @@
 				IPosition position )
 		{
 			Contract<InvalidTurn>
-					.Requires( this._nextPlayer == Player.X );
+					.Requires( this._currentPlayer == Player.X );
 
-			this._nextPlayer = Player.O;
+			this._currentPlayer = Player.O;
 			this._board.MarkPosition( Mark.X, position );
 			return this;
 		}
@@ -35,9 +35,9 @@
 				IPosition position )
 		{
 			Contract<InvalidTurn>
-					.Requires( this._nextPlayer == Player.O );
+					.Requires( this._currentPlayer == Player.O );
 
-			this._nextPlayer = Player.X;
+			this._currentPlayer = Player.X;
 			this._board.MarkPosition( Mark.O, position );
 			return this;
 		}
