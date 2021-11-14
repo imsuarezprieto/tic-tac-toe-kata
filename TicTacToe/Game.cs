@@ -14,9 +14,11 @@
 
 		public Game Play (
 				IPosition position )
-			=> this._nextPlayer == Player.X
-					? this.PlayX( position )
-					: this.PlayO( position );
+		{
+			this._board.MarkPosition( this._nextPlayer.Mark, position );
+			this._nextPlayer = this._nextPlayer.NextPlayer;
+			return this;
+		}
 
 		public Game PlayX (
 				IPosition position )
