@@ -2,8 +2,8 @@
 {
 	public sealed class Game
 	{
-		private readonly Board _board = new();
-		private          Turn  _lastTurn;
+		private readonly Board  _board    = new();
+		private          Player _nextTurn = Player.X;
 
 		public Player? Winner ()
 			=> this._board switch {
@@ -14,17 +14,17 @@
 
 		public Game Play (
 				IPosition position )
-			=> this._lastTurn == Turn.PlayerX
-					? this.PlayO( position )
-					: this.PlayX( position );
+			=> this._nextTurn == Player.X
+					? this.PlayX( position )
+					: this.PlayO( position );
 
 		public Game PlayX (
 				IPosition position )
 		{
 			Contract<InvalidTurn>
-					.Requires( this._lastTurn != Turn.PlayerX );
+					.Requires( this._nextTurn == Player.X );
 
-			this._lastTurn = Turn.PlayerX;
+			this._nextTurn = Player.O;
 			this._board.MarkPosition( Mark.X, position );
 			return this;
 		}
@@ -33,18 +33,11 @@
 				IPosition position )
 		{
 			Contract<InvalidTurn>
-					.Requires( this._lastTurn != Turn.PlayerO );
+					.Requires( this._nextTurn == Player.O );
 
-			this._lastTurn = Turn.PlayerO;
+			this._nextTurn = Player.X;
 			this._board.MarkPosition( Mark.O, position );
 			return this;
-		}
-
-
-		private enum Turn
-		{
-			PlayerO,
-			PlayerX,
 		}
 	}
 }
