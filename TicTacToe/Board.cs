@@ -35,12 +35,5 @@
 
 			this._positions[position] = mark;
 		}
-
-		internal Boolean IsEmpty ()
-		{
-			return this._positions
-					.All( static position =>
-							position.Value == Mark.None );
-		}
 	}
 }
