@@ -16,7 +16,7 @@
 				IPosition position )
 		{
 			this._board.MarkPosition( this._currentPlayer.Mark, position );
-			this._currentPlayer = this._currentPlayer.NextPlayer;
+			this._currentPlayer++;
 			return this;
 		}
 

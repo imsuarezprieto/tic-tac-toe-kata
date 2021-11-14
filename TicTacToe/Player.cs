@@ -14,6 +14,10 @@
 		public static Player O { get; } = new()  { Mark = Mark.O };
 
 		internal Mark   Mark       { get; private init; }
-		internal Player NextPlayer { get; private set; }
+		private  Player NextPlayer { get; set; }
+
+		public static Player operator ++ (
+				Player player )
+			=> player.NextPlayer;
 	}
 }
