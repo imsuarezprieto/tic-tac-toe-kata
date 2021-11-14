@@ -7,9 +7,9 @@
 
 		public Player? Winner ()
 			=> this._board switch {
-					var board when board.IsInLine( Mark.X ) => Player.PlayerX,
-					var board when board.IsInLine( Mark.O ) => Player.PlayerO,
-					_                                       => null,
+					var board when board.IsInLine( Player.X.Mark ) => Player.X,
+					var board when board.IsInLine( Player.O.Mark ) => Player.O,
+					_                                              => null,
 			};
 
 		public Game Play (

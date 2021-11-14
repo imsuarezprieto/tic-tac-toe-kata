@@ -1,8 +1,12 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
-	public enum Player
+	public sealed class Player
 	{
-		PlayerO,
-		PlayerX,
+		private Player () { }
+
+		public static Player X { get; } = new()  { Mark = Mark.X };
+		public static Player O { get; } = new()  { Mark = Mark.O };
+
+		internal Mark Mark { get; private init; }
 	}
 }
