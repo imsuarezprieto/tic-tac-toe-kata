@@ -7,12 +7,12 @@
 
 	internal sealed class Board
 	{
-		private readonly Dictionary<IPosition, Mark> _positions = new() {
+		private readonly Dictionary<Position, Mark> _positions = new() {
 				{ Position.Top.Left,      Mark.None },
 				{ Position.Top.Middle,    Mark.None },
 				{ Position.Top.Right,     Mark.None },
 				{ Position.Middle.Left,   Mark.None },
-				{ Position.Center,        Mark.None },
+				{ Position.Middle.Middle, Mark.None },
 				{ Position.Middle.Right,  Mark.None },
 				{ Position.Bottom.Left,   Mark.None },
 				{ Position.Bottom.Middle, Mark.None },
@@ -20,8 +20,8 @@
 		};
 
 		internal void MarkPosition (
-				Mark      mark,
-				IPosition position )
+				Mark     mark,
+				Position position )
 		{
 			Contract.No<AlreadyMarkedPosition>()
 					.Requires( this._positions[position] == Mark.None )

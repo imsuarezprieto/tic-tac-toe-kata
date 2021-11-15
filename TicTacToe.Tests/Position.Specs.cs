@@ -18,8 +18,8 @@ namespace Exeal.Katas.TicTacToe.Tests
 
 			Action playerO_marks_same_playerX = ()
 					=> game
-							.Play( Position.Center )
-							.Play( Position.Center );
+							.Play( Position.Middle.Middle )
+							.Play( Position.Middle.Middle );
 
 			playerO_marks_same_playerX
 					.Should().Throw<AlreadyMarkedPosition>();
@@ -31,7 +31,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			var game = new Game();
 
 			Action playerO_marks_same_playerX = () => game
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Middle.Left );
 
 			playerO_marks_same_playerX
@@ -44,9 +44,9 @@ namespace Exeal.Katas.TicTacToe.Tests
 			var game = new Game();
 
 			Action playerX_marks_same_position_twice = () => game
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Middle.Left )
-					.Play( Position.Center );
+					.Play( Position.Middle.Middle );
 
 			playerX_marks_same_position_twice
 					.Should().Throw<AlreadyMarkedPosition>();
@@ -58,7 +58,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			var game = new Game();
 
 			Action playerO_marks_same_position_twice = () => game
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Middle.Right )
 					.Play( Position.Bottom.Left )
 					.Play( Position.Middle.Right );

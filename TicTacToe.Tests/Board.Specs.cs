@@ -18,7 +18,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 					new Object[] { Position.Top.Middle },
 					new Object[] { Position.Top.Right },
 					new Object[] { Position.Middle.Left },
-					new Object[] { Position.Center },
+					new Object[] { Position.Middle.Middle },
 					new Object[] { Position.Middle.Right },
 					new Object[] { Position.Bottom.Left },
 					new Object[] { Position.Bottom.Middle },
@@ -28,7 +28,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 		[Theory]
 		[MemberData( nameof(Starts_empty_Board.EveryPosition) )]
 		public void Starting_players_can_mark_any_position (
-				IPosition position )
+				Position position )
 		{
 			var newGame = new Game();
 

@@ -6,7 +6,7 @@
 		private          Player _currentPlayer = Player.X;
 
 		public Game Play (
-				IPosition position )
+				Position position )
 		{
 			Contract.No<EndedGame>()
 					.Requires( this._board.IsFull() is false )

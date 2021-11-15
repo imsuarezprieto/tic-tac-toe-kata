@@ -20,7 +20,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// · X ·
 			// · · X
 			game
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Top.Right )
 					.Play( Position.Bottom.Right )
 					.Play( Position.Top.Middle )
@@ -39,7 +39,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// · X ·
 			// X · X
 			game
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Top.Right )
 					.Play( Position.Bottom.Right )
 					.Play( Position.Top.Middle )
@@ -59,7 +59,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// X X O
 			// X O X
 			game
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Top.Right )
 					.Play( Position.Bottom.Right )
 					.Play( Position.Top.Left )
@@ -83,7 +83,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			// o · X
 			Action winning_moves = () =>
 					game
-							.Play( Position.Center )
+							.Play( Position.Middle.Middle )
 							.Play( Position.Top.Right )
 							.Play( Position.Bottom.Right )
 							.Play( Position.Top.Middle )

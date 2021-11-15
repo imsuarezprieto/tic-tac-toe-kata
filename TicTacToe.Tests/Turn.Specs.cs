@@ -22,7 +22,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 			var newGame = new Game();
 
 			newGame
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Bottom.Right )
 					.Play( Position.Top.Left );
 

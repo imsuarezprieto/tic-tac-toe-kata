@@ -26,7 +26,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 					.Play( Position.Middle.Right )
 					.Play( Position.Middle.Left )
 					.Play( Position.Bottom.Left )
-					.Play( Position.Center )
+					.Play( Position.Middle.Middle )
 					.Play( Position.Bottom.Right )
 					.Play( Position.Bottom.Middle );
 
@@ -50,7 +50,7 @@ namespace Exeal.Katas.TicTacToe.Tests
 							.Play( Position.Middle.Right )
 							.Play( Position.Middle.Left )
 							.Play( Position.Bottom.Left )
-							.Play( Position.Center )
+							.Play( Position.Middle.Middle )
 							.Play( Position.Bottom.Right )
 							.Play( Position.Bottom.Middle )
 							.Play( Position.Bottom.Right );
