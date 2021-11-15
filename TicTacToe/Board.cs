@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Exeal.Katas.TicTacToe.Exceptions;
+    using Exeal.Katas.TicTacToe.SeedWork;
 
 
     internal sealed class Board

@@ -1,5 +1,9 @@
 ﻿namespace Exeal.Katas.TicTacToe
 {
+    using Exeal.Katas.TicTacToe.Exceptions;
+    using Exeal.Katas.TicTacToe.SeedWork;
+
+
     public sealed class Game
     {
         private readonly Board  board         = new();

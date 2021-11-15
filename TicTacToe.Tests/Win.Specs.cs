@@ -4,6 +4,7 @@
 namespace Exeal.Katas.TicTacToe.Tests
 {
     using System;
+    using Exeal.Katas.TicTacToe.Exceptions;
     using FluentAssertions;
     using Xunit;
 

@@ -1,4 +1,4 @@
-﻿namespace Exeal.Katas.TicTacToe
+﻿namespace Exeal.Katas.TicTacToe.Exceptions
 {
     using System;
     public sealed class InvalidTurn : Exception { }

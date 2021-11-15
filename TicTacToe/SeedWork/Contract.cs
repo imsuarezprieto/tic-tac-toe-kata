@@ -1,4 +1,4 @@
-﻿namespace Exeal.Katas.TicTacToe
+﻿namespace Exeal.Katas.TicTacToe.SeedWork
 {
     using System;
 
