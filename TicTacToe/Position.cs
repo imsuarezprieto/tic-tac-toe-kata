@@ -1,4 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
+// ReSharper disable StaticMemberInitializerReferesToMemberBelow
 
 namespace Exeal.Katas.TicTacToe
 {
@@ -27,17 +28,16 @@ namespace Exeal.Katas.TicTacToe
 
     public sealed partial class  Position
     {
-        internal static IEnumerable<IEnumerable<Position>> Lines {
-            get {
-                yield return new List<Position> { Position.Top.Left,    Position.Top.Middle,    Position.Top.Right };
-                yield return new List<Position> { Position.Middle.Left, Position.Middle.Middle, Position.Middle.Right };
-                yield return new List<Position> { Position.Bottom.Left, Position.Bottom.Middle, Position.Bottom.Right };
-                yield return new List<Position> { Position.Top.Left,    Position.Middle.Left,   Position.Bottom.Left };
-                yield return new List<Position> { Position.Top.Middle,  Position.Middle.Middle, Position.Bottom.Middle };
-                yield return new List<Position> { Position.Top.Right,   Position.Middle.Right,  Position.Bottom.Right };
-                yield return new List<Position> { Position.Top.Left,    Position.Middle.Middle, Position.Bottom.Right };
-                yield return new List<Position> { Position.Top.Right,   Position.Middle.Middle, Position.Bottom.Left };
-            }
-        }
+        internal static readonly List<List<Position>> Lines =
+                new() {
+                        new() { Position.Top.Left,    Position.Top.Middle,    Position.Top.Right },
+                        new() { Position.Middle.Left, Position.Middle.Middle, Position.Middle.Right },
+                        new() { Position.Bottom.Left, Position.Bottom.Middle, Position.Bottom.Right },
+                        new() { Position.Top.Left,    Position.Middle.Left,   Position.Bottom.Left },
+                        new() { Position.Top.Middle,  Position.Middle.Middle, Position.Bottom.Middle },
+                        new() { Position.Top.Right,   Position.Middle.Right,  Position.Bottom.Right },
+                        new() { Position.Top.Left,    Position.Middle.Middle, Position.Bottom.Right },
+                        new() { Position.Top.Right,   Position.Middle.Middle, Position.Bottom.Left },
+                };
     }
 }
