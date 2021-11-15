@@ -23,27 +23,5 @@
 			this._currentPlayer++;
 			return this;
 		}
-
-		public Game PlayX (
-				IPosition position )
-		{
-			Contract.No<InvalidTurn>()
-					.Requires( this._currentPlayer == Player.X )
-					;
-			this._currentPlayer = Player.O;
-			this._board.MarkPosition( Mark.X, position );
-			return this;
-		}
-
-		public Game PlayO (
-				IPosition position )
-		{
-			Contract.No<InvalidTurn>()
-					.Requires( this._currentPlayer == Player.O )
-					;
-			this._currentPlayer = Player.X;
-			this._board.MarkPosition( Mark.O, position );
-			return this;
-		}
 	}
 }
