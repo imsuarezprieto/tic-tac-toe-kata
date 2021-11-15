@@ -3,6 +3,7 @@
 
 namespace Exeal.Katas.TicTacToe.Tests
 {
+	using System;
 	using FluentAssertions;
 	using Xunit;
 
@@ -31,6 +32,31 @@ namespace Exeal.Katas.TicTacToe.Tests
 
 			game.Winner()
 					.Should().BeNull();
+		}
+
+		[Fact]
+		public void Full_board_with_no_winner_is_ended ()
+		{
+			var game = new Game();
+
+			// X O X
+			// X X O
+			// O X o
+			Action fill_board_with_no_winning_marks = () =>
+					game
+							.Play( Position.Top.Left )
+							.Play( Position.Top.Middle )
+							.Play( Position.Top.Right )
+							.Play( Position.Middle.Right )
+							.Play( Position.Middle.Left )
+							.Play( Position.Bottom.Left )
+							.Play( Position.Center )
+							.Play( Position.Bottom.Right )
+							.Play( Position.Bottom.Middle )
+							.Play( Position.Bottom.Right );
+
+			fill_board_with_no_winning_marks
+					.Should().Throw<EndedGame>();
 		}
 	}
 }

@@ -35,5 +35,10 @@
 
 			this._positions[position] = mark;
 		}
+
+		internal Boolean IsFull ()
+			=> this._positions
+					.All( static position =>
+							position.Value != Mark.None );
 	}
 }

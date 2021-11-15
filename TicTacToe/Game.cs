@@ -16,6 +16,8 @@
 				IPosition position )
 		{
 			Contract<EndedGame>
+					.Requires( this._board.IsFull() is false );
+			Contract<EndedGame>
 					.Requires( this.Winner() is null );
 
 			this._board.MarkPosition( this._currentPlayer.Mark, position );
