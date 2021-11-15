@@ -14,8 +14,7 @@
     internal class No<TException> where TException : Exception, new()
     {
         public No<TException> Requires (
-                Boolean condition
-        )
+                Boolean condition )
         {
             if (!condition) throw new TException();
 
