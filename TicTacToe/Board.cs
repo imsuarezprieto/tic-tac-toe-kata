@@ -7,7 +7,7 @@
 
 	internal sealed class Board
 	{
-		private readonly Dictionary<Position, Mark> _positions = new() {
+		private readonly Dictionary<Position, Mark> positions = new() {
 				{ Position.Top.Left,      Mark.None },
 				{ Position.Top.Middle,    Mark.None },
 				{ Position.Top.Right,     Mark.None },
@@ -24,13 +24,13 @@
 				Position position )
 		{
 			Contract.No<AlreadyMarkedPosition>()
-					.Requires( this._positions[position] == Mark.None )
+					.Requires( positions[position] == Mark.None )
 					;
-			this._positions[position] = mark;
+			positions[position] = mark;
 		}
 
 		internal Boolean IsFull ()
-			=> this._positions
+			=> positions
 					.All( static position =>
 							position.Value != Mark.None );
 
@@ -39,6 +39,6 @@
 			=> Position.Lines
 					.Any( line =>
 							line.All( position =>
-									this._positions[position] == mark ) );
+									positions[position] == mark ) );
 	}
 }
