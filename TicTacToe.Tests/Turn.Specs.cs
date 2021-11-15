@@ -45,14 +45,13 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var newGame = new Game();
 
-			Action players_marks_in_turns = () => {
-				newGame.PlayX( Position.Center );
-				newGame.PlayO( Position.Bottom.Right );
-				newGame.PlayX( Position.Top.Middle );
-			};
+			newGame
+					.Play( Position.Center )
+					.Play( Position.Bottom.Right )
+					.Play( Position.Top.Left );
 
-			players_marks_in_turns
-					.Should().NotThrow();
+			newGame.Winner()
+					.Should().BeNull(  );
 		}
 	}
 }
