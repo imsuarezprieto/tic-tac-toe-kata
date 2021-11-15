@@ -15,6 +15,9 @@
 		public Game Play (
 				IPosition position )
 		{
+			Contract<EndedGame>
+					.Requires( this.Winner() is null );
+
 			this._board.MarkPosition( this._currentPlayer.Mark, position );
 			this._currentPlayer++;
 			return this;
