@@ -1,13 +1,15 @@
-﻿namespace Exeal.Katas.TicTacToe
+﻿// ReSharper disable InconsistentNaming
+
+namespace Exeal.Katas.TicTacToe
 {
     using System.Collections.Generic;
 
 
     public sealed partial class Position
     {
-        public static Row Top    { get; } = new();
-        public static Row Middle { get; } = new();
-        public static Row Bottom { get; } = new();
+        public static readonly Row Top    = new();
+        public static readonly Row Middle = new();
+        public static readonly Row Bottom = new();
 
         internal Position () { }
     }
@@ -15,9 +17,9 @@
 
     public sealed class Row
     {
-        public Position Left   { get; } = new();
-        public Position Middle { get; } = new();
-        public Position Right  { get; } = new();
+        public readonly Position Left   = new();
+        public readonly Position Middle = new();
+        public readonly Position Right  = new();
 
         internal Row () { }
     }
