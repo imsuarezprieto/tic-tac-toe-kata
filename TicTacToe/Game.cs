@@ -15,11 +15,10 @@
 		public Game Play (
 				IPosition position )
 		{
-			Contract<EndedGame>
-					.Requires( this._board.IsFull() is false );
-			Contract<EndedGame>
-					.Requires( this.Winner() is null );
-
+			Contract.No<EndedGame>()
+					.Requires( this._board.IsFull() is false )
+					.Requires( this.Winner() is null )
+					;
 			this._board.MarkPosition( this._currentPlayer.Mark, position );
 			this._currentPlayer++;
 			return this;
@@ -28,9 +27,9 @@
 		public Game PlayX (
 				IPosition position )
 		{
-			Contract<InvalidTurn>
-					.Requires( this._currentPlayer == Player.X );
-
+			Contract.No<InvalidTurn>()
+					.Requires( this._currentPlayer == Player.X )
+					;
 			this._currentPlayer = Player.O;
 			this._board.MarkPosition( Mark.X, position );
 			return this;
@@ -39,9 +38,9 @@
 		public Game PlayO (
 				IPosition position )
 		{
-			Contract<InvalidTurn>
-					.Requires( this._currentPlayer == Player.O );
-
+			Contract.No<InvalidTurn>()
+					.Requires( this._currentPlayer == Player.O )
+					;
 			this._currentPlayer = Player.X;
 			this._board.MarkPosition( Mark.O, position );
 			return this;

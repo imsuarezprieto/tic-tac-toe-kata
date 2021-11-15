@@ -30,9 +30,9 @@
 				Mark      mark,
 				IPosition position )
 		{
-			Contract<AlreadyMarkedPosition>
-					.Requires( this._positions[position] == Mark.None );
-
+			Contract.No<AlreadyMarkedPosition>()
+					.Requires( this._positions[position] == Mark.None )
+					;
 			this._positions[position] = mark;
 		}
 
