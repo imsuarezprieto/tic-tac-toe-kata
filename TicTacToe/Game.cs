@@ -23,8 +23,8 @@
 
         public Player? Winner ()
             => board switch {
-                    _ when board.IsInLine( Player.X.Mark ) => Player.X,
-                    _ when board.IsInLine( Player.O.Mark ) => Player.O,
+                    _ when board.IsInline( Player.X.Mark ) => Player.X,
+                    _ when board.IsInline( Player.O.Mark ) => Player.O,
                     _                                      => null,
             };
     }

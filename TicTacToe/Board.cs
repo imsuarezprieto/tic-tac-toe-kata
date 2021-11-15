@@ -36,7 +36,7 @@
                     .All( static position =>
                             position.Value != Mark.None );
 
-        internal Boolean IsInLine (
+        internal Boolean IsInline (
                 Mark mark )
             => Position.Lines
                     .Any( line =>
