@@ -16,9 +16,6 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var game = new Game();
 
-			// X O X
-			// X X O
-			// O X O
 			game
 					.Play( Position.Top.Left )
 					.Play( Position.Top.Middle )
@@ -39,9 +36,6 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var game = new Game();
 
-			// X O X
-			// X X O
-			// O X o
 			Action fill_board_with_no_winning_marks = () =>
 					game
 							.Play( Position.Top.Left )

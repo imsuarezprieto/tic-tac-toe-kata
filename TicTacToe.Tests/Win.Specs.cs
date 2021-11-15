@@ -16,9 +16,6 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var game = new Game();
 
-			// X O O
-			// · X ·
-			// · · X
 			game
 					.Play( Position.Middle.Middle )
 					.Play( Position.Top.Right )
@@ -35,9 +32,6 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var game = new Game();
 
-			// O O O
-			// · X ·
-			// X · X
 			game
 					.Play( Position.Middle.Middle )
 					.Play( Position.Top.Right )
@@ -55,9 +49,6 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var game = new Game();
 
-			// O X O
-			// X X O
-			// X O X
 			game
 					.Play( Position.Middle.Middle )
 					.Play( Position.Top.Right )
@@ -78,9 +69,6 @@ namespace Exeal.Katas.TicTacToe.Tests
 		{
 			var game = new Game();
 
-			// X O O
-			// · X ·
-			// o · X
 			Action winning_moves = () =>
 					game
 							.Play( Position.Middle.Middle )
