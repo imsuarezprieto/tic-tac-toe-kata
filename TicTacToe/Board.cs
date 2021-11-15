@@ -19,13 +19,6 @@
 				{ Position.Bottom.Right,  Mark.None },
 		};
 
-		internal Boolean IsInLine (
-				Mark mark )
-			=> Position.Lines
-					.Any( line =>
-							line.All( position =>
-									this._positions[position] == mark ) );
-
 		internal void MarkPosition (
 				Mark      mark,
 				IPosition position )
@@ -40,5 +33,12 @@
 			=> this._positions
 					.All( static position =>
 							position.Value != Mark.None );
+
+		internal Boolean IsInLine (
+				Mark mark )
+			=> Position.Lines
+					.Any( line =>
+							line.All( position =>
+									this._positions[position] == mark ) );
 	}
 }
