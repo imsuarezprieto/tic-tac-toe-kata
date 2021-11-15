@@ -4,12 +4,12 @@ namespace Exeal.Katas.TicTacToe
 {
     public sealed partial class Player
     {
-        private  Player NextPlayer = null!;
+        private  Player Next = null!;
         internal Mark   Mark { get; private init; }
 
         public static Player operator ++ (
                 Player player )
-            => player.NextPlayer;
+            => player.Next;
     }
 
 
@@ -20,8 +20,8 @@ namespace Exeal.Katas.TicTacToe
 
         static Player ()
         {
-            Player.X.NextPlayer = Player.O;
-            Player.O.NextPlayer = Player.X;
+            Player.X.Next = Player.O;
+            Player.O.Next = Player.X;
         }
 
         private Player () { }
