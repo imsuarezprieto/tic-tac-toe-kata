@@ -1,11 +1,13 @@
 ﻿// ReSharper disable InconsistentNaming
+// ReSharper disable NullableWarningSuppressionIsUsed
 
 namespace Exeal.Katas.TicTacToe
 {
     public sealed partial class Player
     {
-        private  Player Next = null!;
         internal Mark   Mark { get; private init; }
+
+        private  Player Next = null!;
 
         public static Player operator ++ (
                 Player player )
